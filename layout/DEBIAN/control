@@ -1,0 +1,9 @@
+Package: com.burritoz.catgirlwidget
+Name: Catgirl Widget
+Depends: mobilesubstrate, preferenceloader, xyz.burritoz.thomz.multipla (>=2.1.0~rc5)
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Catgirl widget for Multipla
+Maintainer: burrit0z
+Author: burrit0z
+Section: Addons
