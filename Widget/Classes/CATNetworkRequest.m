@@ -14,7 +14,7 @@
 
 - (NSDictionary *)apiDictionary {
     NSData *data = [NSData dataWithContentsOfURL:self.URL];
-    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:nil];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
     return JSON;
 }
@@ -26,9 +26,11 @@
 
 - (void)updateImage:(UIImageView *)imageView {
     __block UIImageView *blockImageView = imageView;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[self catgirlURL]]];
-        blockImageView.image = image;
+    dispatch_async(dispatch_queue_create("com.burritoz.catgirlwidget.update", NULL), ^{
+        __block UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[self catgirlURL]]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            blockImageView.image = image;
+        });
     });
 }
 

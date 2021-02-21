@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleExecutable</key>
-	<string>CatgirlWidget</string>
+	<string>CATCatgirlWidget</string>
 	<key>NSPrincipalClass</key>
 	<string>CATCatgirlWidget</string>
 	<key>name</key>
